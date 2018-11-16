@@ -19,11 +19,15 @@ set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+set history=1000
+set confirm
+set scrolloff=3
 
 "autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 filetype on
+filetype plugin indent on
 
 :inoremap ( ()<ESC>i
 :inoremap ) <c-r>=ClosePair(')')<CR>
@@ -33,6 +37,14 @@ filetype on
 :inoremap ] <c-r>=ClosePair(']')<CR>
 :inoremap " ""<ESC>i
 :inoremap ' ''<ESC>i
+
+function ClosePair(char)
+	if getline('.')[col('.') - 1] == a:char
+		return "\<Right>"
+	else
+		return a:char
+	endif
+endfunction
 
 map <C-A> ggVGY
 map <C-A> <Esc>ggVGY
@@ -61,7 +73,8 @@ let g:nodejs_complete_config = {
 \}
 
 call plug#begin('~/.vim/plugged')
-Plug 'sheerun/vim-polyglot'
+"Plug 'sheerun/vim-polyglot'
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javesript' }
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
