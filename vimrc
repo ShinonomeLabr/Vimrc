@@ -79,6 +79,7 @@ Plug 'ternjs/tern_for_vim', { 'for': 'javesript' }
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
+Plug 'https://github.com/joshdick/onedark.vim.git'
 call plug#end()
 
 "--AUTOCOMPLETION--
