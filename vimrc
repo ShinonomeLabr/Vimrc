@@ -22,6 +22,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set history=1000
 set confirm
 set scrolloff=3
+set pastetoggle=<F9>
 
 "autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -72,18 +73,43 @@ let g:nodejs_complete_config = {
 \	'max_node_compl_len': 15
 \}
 
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
+let g:airline_theme='onedark'
+
 call plug#begin('~/.vim/plugged')
-"Plug 'sheerun/vim-polyglot'
-"Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'sheerun/vim-polyglot'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'ternjs/tern_for_vim', { 'for': 'javesript' }
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/joshdick/onedark.vim.git'
+Plug 'dracula/vim',{'as':'dracula'}
 call plug#end()
 
 "--AUTOCOMPLETION--
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+
 colorscheme onedark
+"color dracula
+
