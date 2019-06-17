@@ -96,7 +96,15 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'dracula/vim',{'as':'dracula'}
+Plug 'airblade/vim-gitgutter'
+Plug 'severin-lemaignan/vim-minimap'
 call plug#end()
+
+" Minimap settings
+let g:minimap_show='<leader>ms'
+let g:minimap_update='<leader>mu'
+let g:minimap_close='<leader>gc'
+let g:minimap_toggle='<leader>gt'
 
 "--AUTOCOMPLETION--
 filetype plugin on
