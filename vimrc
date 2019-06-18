@@ -23,6 +23,13 @@ set history=1000
 set confirm
 set scrolloff=3
 set pastetoggle=<F9>
+set foldmethod=indent
+
+" Keep all folds open when a file is opened
+augroup OpenAllFoldsOnFileOpen
+    autocmd!
+    autocmd BufRead * normal zR
+augroup END
 
 "autocmd vimenter * NERDTree
 map <C-n> :NERDTreeToggle<CR>
