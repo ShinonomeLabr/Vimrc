@@ -11,6 +11,13 @@
 
 ## Tips
 
+#### Update or Delete plugins
+
+```
+	:PlugUpdate
+	:PlugClean
+```
+
 #### Ubuntu 14.04 update vim8
 
 ```  
@@ -18,4 +25,8 @@
   sudo apt update
   sudo apt install vim
 ```
+
+#### Vim-jsbeautify installation
+
+[README](https://github.com/maksimr/vim-jsbeautify/blob/master/README.md)
 

@@ -24,6 +24,7 @@ set confirm
 set scrolloff=3
 set pastetoggle=<F9>
 set foldmethod=indent
+set lazyredraw
 
 " Keep all folds open when a file is opened
 augroup OpenAllFoldsOnFileOpen
@@ -63,8 +64,12 @@ map <C-F3> \be
 nmap tt :%s\t/	/g<CR>
 nmap <F7> :n<CR>
 nmap <F8> :bn<CR>
-nnoremap <F2> :g/^\s*$/d<CR> 
+nnoremap <F4> :g/^\s*$/d<CR> 
 nnoremap <C-F2> :vert diffsplit 
+nnoremap <C-Left> :tabprevious<CR>                                                                            
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>                                                                            
+nnoremap <C-k> :tabnext<CR>
 vmap <C-c> "+y
 
 let g:ctrlp_map='<c-p>'
@@ -107,7 +112,24 @@ Plug 'https://github.com/joshdick/onedark.vim.git'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'airblade/vim-gitgutter'
 Plug 'severin-lemaignan/vim-minimap'
+Plug 'maksimr/vim-jsbeautify'
 call plug#end()
+
+".vimrc
+"map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+"Call jsbeautify
+nmap <leader>f :call JsBeautify()<CR>
 
 " Minimap settings
 let g:minimap_show='<leader>ms'
