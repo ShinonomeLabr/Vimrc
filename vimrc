@@ -57,13 +57,15 @@ endfunction
 map <C-A> ggVGY
 map <C-A> <Esc>ggVGY
 map <F12> gg=G
-vmap <C-c> "+y
-nnoremap <F2> :g/^\s*$/d<CR> 
-nnoremap <C-F2> :vert diffsplit 
 map <M-F2> :tabnew<CR>  
 map <F3> :tabnew .<CR>  
 map <C-F3> \be  
 nmap tt :%s\t/	/g<CR>
+nmap <F7> :n<CR>
+nmap <F8> :bn<CR>
+nnoremap <F2> :g/^\s*$/d<CR> 
+nnoremap <C-F2> :vert diffsplit 
+vmap <C-c> "+y
 
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd='CtrlP'
