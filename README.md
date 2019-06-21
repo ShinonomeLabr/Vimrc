@@ -30,3 +30,9 @@
 
 [README](https://github.com/maksimr/vim-jsbeautify/blob/master/README.md)
 
+#### FZF
+[README](https://github.com/junegunn/fzf.vim)
+
+#### The silver searcher
+[README](https://github.com/ggreer/the_silver_searcher/issues/183#issuecomment-16269551)
+

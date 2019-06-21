@@ -1,6 +1,6 @@
-set nu
 syntax on
 
+set nu
 set hlsearch
 set incsearch
 set ruler
@@ -99,8 +99,6 @@ function! Toggle_transparent()
 endfunction
 nnoremap <C-t> : call Toggle_transparent()<CR>
 
-let g:airline_theme='onedark'
-
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
@@ -113,23 +111,27 @@ Plug 'dracula/vim',{'as':'dracula'}
 Plug 'airblade/vim-gitgutter'
 Plug 'severin-lemaignan/vim-minimap'
 Plug 'maksimr/vim-jsbeautify'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 ".vimrc
 "map <c-f> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+"autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+"autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+"autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+"autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+"autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 "Call jsbeautify
 nmap <leader>f :call JsBeautify()<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>b :Buffers<CR>
 
 " Minimap settings
 let g:minimap_show='<leader>ms'
@@ -149,6 +151,7 @@ set laststatus=2
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
 
+let g:airline_theme='onedark'
 colorscheme onedark
 "color dracula
 
